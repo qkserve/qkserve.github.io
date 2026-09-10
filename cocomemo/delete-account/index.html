@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ここメモ アカウント・データの削除 | 株式会社クイックサーブ</title>
+<meta name="description" content="ここメモ (位置情報 ToDo リマインダーアプリ) のアカウントとデータの削除をリクエストする手順。株式会社クイックサーブ。">
+<link rel="canonical" href="https://qkserve.github.io/cocomemo/delete-account/">
+<style>
+:root{color-scheme:light dark;--fg:#1c2733;--bg:#ffffff;--muted:#5b6b7b;--line:#dbe3ea;--accent:#0a7ea4;--card:#f5f8fa}
+@media(prefers-color-scheme:dark){:root{--fg:#e6edf3;--bg:#101820;--muted:#9db0c0;--line:#2c3a47;--accent:#4cc2e8;--card:#182430}}
+*{box-sizing:border-box}
+body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.8;font-size:16px}
+main{max-width:760px;margin:0 auto;padding:24px 20px 64px}
+h1{font-size:1.5rem;line-height:1.4;margin:1.2em 0 .4em}
+h2{font-size:1.15rem;margin:2em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+p,li{overflow-wrap:break-word}
+a{color:var(--accent)}
+.lang{text-align:right;font-size:.9rem;margin-top:16px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin:1em 0}
+.muted{color:var(--muted);font-size:.9rem}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+<p class="lang"><a href="./en/" rel="alternate" hreflang="en">English</a></p>
+
+<h1>ここメモ アカウント・データの削除</h1>
+<p>本ページは、株式会社クイックサーブが提供するアプリ「ここメモ」(CocoMemo、iOS / Android) のアカウントと、それに関連するデータの削除をリクエストする手順を案内するものです。</p>
+
+<h2>アカウントの削除をリクエストする手順</h2>
+<ol>
+<li>アプリの「設定」画面を開き、「リカバリーコード」または「利用者 ID」を控えます (本人確認に使用します。いずれも第三者に共有しないでください)。</li>
+<li>下記の窓口宛てに、件名を「ここメモ アカウント削除」として、控えた「リカバリーコード」または「利用者 ID」を添えてご連絡ください。</li>
+<li>当社で本人確認のうえ、<strong>受付から 30 日以内</strong>にアカウントと関連データを削除し、完了をご連絡します。</li>
+<li>削除後にアプリを引き続きお使いの場合は、アプリをアンインストールして再インストールしてください (新しい匿名アカウントが作成されます)。</li>
+</ol>
+<div class="contact">
+<p>メール: <a href="mailto:info@91932.com?subject=%E3%81%93%E3%81%93%E3%83%A1%E3%83%A2%20%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E5%89%8A%E9%99%A4">info@91932.com</a><br>
+お問い合わせフォーム: <a href="https://91932.com/inquiry.html" rel="noopener noreferrer">91932.com/inquiry.html</a><br>
+電話: 03-6450-5141 (平日10:00〜19:00)</p>
+<p class="muted">対応言語: 日本語・英語 / 手数料: 無料</p>
+</div>
+
+<h2>削除されるデータ・保持されるデータ</h2>
+<table>
+<tr><th>データ</th><th>取り扱い</th></tr>
+<tr><td>匿名アカウント (Firebase Authentication の利用者識別子)</td><td>削除</td></tr>
+<tr><td>プロフィール (ニックネーム、リカバリーコードのハッシュ値、プッシュ通知用トークン、プレミアムプランの状態)</td><td>削除</td></tr>
+<tr><td>ご自身が作成した共有メモ (ともだちメモ) とその場所情報、およびそのメモに付いたコメント</td><td>削除 (共有相手からも見えなくなります)</td></tr>
+<tr><td>ご自身が投稿したコメント (他の人のメモ上のもの)</td><td>削除</td></tr>
+<tr><td>ご自身が発行した招待</td><td>削除</td></tr>
+<tr><td>ご自身が作成したグループ</td><td>削除 (メンバーは共有メモを閲覧できなくなります)。他の人が作成したグループからはメンバー登録を解除します</td></tr>
+<tr><td>端末内のデータ (じぶんメモ、登録した場所、設定、リカバリーコードの原文)</td><td>当社のサーバーには保存されていません。アプリのアンインストールで端末から削除されます</td></tr>
+<tr><td>プレミアムプランの購入記録</td><td>App Store / Google Play 側の購入履歴は Apple / Google の規約に従い保持されます。定期購入の解約はアプリの削除では行われないため、各ストアの「サブスクリプション」/「定期購入」から解約してください</td></tr>
+<tr><td>Firebase Crashlytics のクラッシュログ、Google AdMob が取得した広告関連情報</td><td>個人を特定しない形で Google のポリシーに基づき保持されます (Crashlytics は 90 日)。当社側で個別の削除操作はできません</td></tr>
+<tr><td>お問い合わせの記録 (連絡先・内容)</td><td>対応完了後、合理的な期間の経過後に削除します</td></tr>
+</table>
+<p class="muted">サーバー上のバックアップに含まれるコピーは、削除の受付から最長 30 日以内に消去されます。</p>
+
+<h2>アカウントを削除せずに一部のデータだけ削除する</h2>
+<ul>
+<li><strong>メモ・場所:</strong> アプリ内で 1 件ずつ削除できます。共有メモを作成者が削除すると、共有相手からも消えます。</li>
+<li><strong>コメント:</strong> ご自身のコメントの削除は上記窓口にご依頼ください。</li>
+<li><strong>グループからの退出:</strong> アプリ内の「ともだちメモ」から退出できます。退出後はそのグループの共有メモを閲覧できなくなります。</li>
+<li><strong>端末内のデータ:</strong> アプリをアンインストールすると端末内のデータは削除されます (OS のバックアップに含まれたコピーは OS 事業者の設定に従います)。</li>
+</ul>
+
+<h2>関連ページ</h2>
+<p><a href="../../privacy/cocomemo/">ここメモ プライバシーポリシー</a> / <a href="../support/">ここメモ サポート</a></p>
+</main>
+<footer>
+<p>運営: 株式会社クイックサーブ | <a href="https://91932.com/" rel="noopener noreferrer">コーポレートサイト</a></p>
+</footer>
+</body>
+</html>
