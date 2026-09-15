@@ -33,7 +33,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p class="lang"><a href="../" rel="alternate" hreflang="ja">日本語</a></p>
 
 <h1>CocoMemo Privacy Policy</h1>
-<p class="meta">Applies to: CocoMemo — <code>com.x91932.cocomemo</code><br>Effective: September 4, 2026<br>Last updated: September 4, 2026</p>
+<p class="meta">Applies to: CocoMemo — <code>com.x91932.cocomemo</code><br>Effective: September 4, 2026<br>Last updated: September 15, 2026</p>
 
 <p>QuickServe Inc. ("we", "us") sets out below how user information is handled in CocoMemo (the "App"), our location-based to-do reminder app (this "Policy").</p>
 
@@ -55,7 +55,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <table>
 <tr><th>Data</th><th>Source</th><th>Purpose</th></tr>
 <tr><td>Location (GPS)<br>including background collection</td><td>Your device's location services</td><td>Detecting when you approach a saved place and notifying you; showing your current position on the map; the initial position when saving a place</td></tr>
-<tr><td>Saved places (coordinates, place name, radius)</td><td>Your actions on the map, and place names obtained from coordinates (Section 5)</td><td>Linking memos to places, proximity detection, map display</td></tr>
+<tr><td>Saved places (coordinates, place name, radius)</td><td>Your actions on the map, and place names obtained from coordinates (Section 5)</td><td>Linking memos to places, proximity detection, map display. Places attached to shared memos are also synced to the people you share with (Section 4)</td></tr>
 <tr><td>My memos (title, note, due date, completion status, history)</td><td>Entered by you and generated in the App</td><td>Displaying memos, notifications and history</td></tr>
 <tr><td>Recovery code (plain text)</td><td>Generated in the App</td><td>Transferring to a new device (Section 4). Stored in your device's secure storage</td></tr>
 <tr><td>App settings</td><td>Your actions in the App</td><td>Storing notification and display preferences</td></tr>
@@ -64,24 +64,26 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p>You can delete this data from within the App, and uninstalling the App removes it from your device (except for the backups described in Section 6).</p>
 
 <h2>4. Information stored on our servers (Firebase)</h2>
-<p>To provide the App's sharing, device-transfer and premium features, we store the information below in Google's Firebase (Cloud Firestore / Firebase Authentication / Cloud Functions), which we use as our backend. <strong>Location coordinates and your location history are never sent to our servers.</strong></p>
+<p>To provide the App's sharing, device-transfer and premium features, we store the information below in Google's Firebase (Cloud Firestore / Firebase Authentication / Cloud Functions), which we use as our backend. <strong>Your current location and your location history are never sent to our servers.</strong> However, the place you attach to a shared memo (coordinates, place name, address and notification radius) is stored on our servers as part of that memo and shown to the group members, so that their devices can notify them at the same place.</p>
 <div class="tablewrap">
 <table>
 <tr><th>Data</th><th>Details</th><th>Purpose</th><th>Who can see it</th></tr>
 <tr><td>Anonymous account</td><td>A user identifier issued by Firebase (contains no name or email address)</td><td>Identifying the owner and participants of shared data</td><td>Us only</td></tr>
 <tr><td>Profile</td><td>Nickname, a hash of your recovery code (the code itself is not stored), push notification tokens, premium plan status / expiry / product ID</td><td>Display within groups, device transfer, delivering comment notifications, providing premium features</td><td>You and us only</td></tr>
 <tr><td>Groups</td><td>Group name, identifiers of the creator and members</td><td>Managing who you share with</td><td>Group members</td></tr>
-<tr><td>Friend memos (shared memos)</td><td>Title, note, due date, completion status, notification radius, internal ID of the place (no coordinates or place name)</td><td>Sharing and syncing with group members</td><td>The people you share with (group members)</td></tr>
+<tr><td>Friend memos (shared memos)</td><td>Title, note, due date, completion status, the attached place (coordinates, place name, address, notification radius), creator identifier, last-updated time</td><td>Sharing and syncing with group members</td><td>The people you share with (group members)</td></tr>
 <tr><td>Comments</td><td>Text, author identifier, timestamp</td><td>Conversation on a shared memo; push notifications to participants</td><td>Participants of that shared memo</td></tr>
 <tr><td>Invitations</td><td>Target group, inviter identifier, expiry, whether used</td><td>Joining a group via QR code or link</td><td>The person who issued the invitation</td></tr>
+<tr><td>Deletion marker</td><td>A record containing only your user identifier and the time of deletion, created when you delete your account</td><td>Prevents data from being re-created with the old account's credentials immediately after deletion. Automatically removed 2 hours after creation</td><td>Us only</td></tr>
 </table>
 </div>
-<p>Shared memos, comments and your nickname are visible to the people you invite (group members). Please do not put anything in a shared memo that you do not want them to see. We do not view or use this information for any purpose other than providing and maintaining the service and the purposes set out in this Policy.</p>
+<p>Shared memos, comments and your nickname are visible to the people you invite (group members). The place attached to a shared memo (coordinates, place name, address) is also visible to them. Please do not put any content or place in a shared memo that you do not want them to see. We do not view or use this information for any purpose other than providing and maintaining the service and the purposes set out in this Policy.</p>
 <p>The recovery code lets you carry over the same anonymous account (groups and premium status) by entering it on a new device. Because only a hash of the code is stored on our servers, we cannot recover or reissue a lost code.</p>
+<p>You can delete your anonymous account and the data in this section at any time from "Settings &gt; Account &gt; Delete account" in the App. See <a href="https://qkserve.github.io/cocomemo/delete-account/en/">CocoMemo Account and Data Deletion</a> for the list of what is deleted and what is retained.</p>
 
 <h2>5. How location data is handled</h2>
 <p>The core function of the App is to notify you when you approach a saved place, which requires background location access ("Always") so that notifications work while the App is closed. Location is only collected if you grant permission in your operating system's dialog, and you can change or revoke it at any time in your device settings.</p>
-<p>Proximity to a place is determined <strong>on your device</strong> using the OS geofencing feature. Location data is never sent to our servers, and it is never used for advertising or ad targeting, nor provided to third parties for any other purpose.</p>
+<p>Proximity to a place is determined <strong>on your device</strong> using the OS geofencing feature. Your current location and location history are never sent to our servers, and location data is never used for advertising or ad targeting, nor provided to third parties for any other purpose (for places you attach to shared memos, see Section 4).</p>
 <p>However, coordinates are passed to the following OS / platform features for map and place-name display.</p>
 <ul>
 <li><strong>Google Maps SDK:</strong> To display the map, information about the visible area and your current position is sent to Google's servers (<a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a>).</li>
@@ -126,7 +128,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <li><strong>Location, notifications and camera:</strong> You can change or revoke each permission at any time in your device settings. If you revoke them, the corresponding features (proximity notifications, scanning invitation QR codes, etc.) become unavailable.</li>
 <li><strong>Stopping sharing:</strong> You can leave a group or delete a shared memo from within the App.</li>
 <li><strong>Advertising:</strong> No ads are shown if you subscribe to the premium plan. On iOS you can manage tracking under Settings &gt; Privacy &amp; Security &gt; Tracking; on Android you can reset or delete your advertising ID and opt out of personalized ads in the OS settings.</li>
-<li><strong>Deleting data on our servers:</strong> To delete your anonymous account and the data in Section 4, please contact us at the contact point in Section 15. We will delete it within a reasonable period (shared memos will no longer be visible to the people you shared them with).</li>
+<li><strong>Deleting data on our servers:</strong> You can delete your anonymous account and the data in Section 4 at any time from "Settings &gt; Account &gt; Delete account" in the App (shared memos will no longer be visible to the people you shared them with). If you can no longer use the App, contact us at the contact point in Section 15 and we will delete it within a reasonable period. See <a href="https://qkserve.github.io/cocomemo/delete-account/en/">CocoMemo Account and Data Deletion</a> for the steps and what is deleted.</li>
 </ul>
 
 <h2>12. Additional information for users in the EEA and the UK (GDPR / UK GDPR)</h2>
@@ -145,7 +147,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 </table>
 </div>
 <ul>
-<li><strong>Retention:</strong> Data on your device is retained until you delete it. Data on our servers (Section 4) is retained until you delete it or we receive a deletion request under Section 11. For data collected by Google, see <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a> and the <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">Google advertising policies</a>. Retention of enquiry information is described in Section 7.</li>
+<li><strong>Retention:</strong> Data on your device is retained until you delete it. Data on our servers (Section 4) is retained until you delete your account in the App or we receive a deletion request under Section 11 (the deletion marker is removed automatically 2 hours after creation). For data collected by Google, see <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a> and the <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">Google advertising policies</a>. Retention of enquiry information is described in Section 7.</li>
 <li><strong>Your rights:</strong> You have the rights of access, rectification, erasure, restriction of processing, objection and data portability. Requests are accepted at the contact point in Section 15. For data held on your device and shared memos, you can view, edit and delete them directly in the App.</li>
 <li><strong>Complaints:</strong> You have the right to lodge a complaint with the supervisory authority in your country.</li>
 <li><strong>Voluntary provision:</strong> Providing information is not a statutory requirement. If you do not grant location access, proximity notifications will not work; if you do not use the sharing features, nothing is stored on our servers; the rest of the App remains usable.</li>
