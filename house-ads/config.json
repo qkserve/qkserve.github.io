@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "defaultProbability": 0.2,
+  "fillOnNoAd": true,
+  "refreshIntervalHours": 24,
+  "perApp": {
+    "com.x91932.furiganamemo": { "probability": 1.0 }
+  },
+  "apps": [
+    {
+      "id": "com.x91932.multiqrscanner",
+      "enabled": true,
+      "weight": 1,
+      "ios": { "appStoreId": "6791825709" },
+      "android": { "packageId": "com.x91932.multiqrscanner" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.multiqrscanner.png",
+      "title": {
+        "ja": "超速簡単QRコードリーダー",
+        "en": "QR & Barcode Scanner MultiScan",
+        "zh": "二维码与条码扫描器",
+        "zh_Hant": "QR 碼與條碼掃描器"
+      },
+      "tagline": {
+        "ja": "複数のQR・バーコードを一括スキャン",
+        "en": "Scan multiple codes at once",
+        "zh": "一次扫描多个二维码和条码",
+        "zh_Hant": "一次掃描多個 QR 碼與條碼"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.numbereraser",
+      "enabled": true,
+      "weight": 1,
+      "android": { "packageId": "com.x91932.numbereraser" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.numbereraser.png",
+      "title": {
+        "ja": "ナンバープレート消し",
+        "en": "NumberEraser",
+        "zh": "NumberEraser 车牌打码",
+        "zh_Hant": "NumberEraser 車牌遮蔽"
+      },
+      "tagline": {
+        "ja": "写真の車のナンバーを自動で隠す",
+        "en": "Auto-hide license plates in photos",
+        "zh": "自动遮挡照片中的车牌",
+        "zh_Hant": "自動遮蔽照片中的車牌"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.furiganamemo",
+      "enabled": true,
+      "weight": 1,
+      "ios": { "appStoreId": "6808106495" },
+      "android": { "packageId": "com.x91932.furiganamemo" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.furiganamemo.png",
+      "title": {
+        "ja": "ふりがなメモ",
+        "en": "Furigana Memo",
+        "zh": "拼音笔记",
+        "zh_Hant": "注音筆記"
+      },
+      "tagline": {
+        "ja": "あらゆる言葉に、自由にふりがな",
+        "en": "Add readings to any text",
+        "zh": "任何词语随心标读音",
+        "zh_Hant": "任何字詞隨心標讀音"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    }
+  ]
+}
