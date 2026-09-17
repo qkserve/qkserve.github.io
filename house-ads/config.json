@@ -3,7 +3,9 @@
   "defaultProbability": 0.2,
   "fillOnNoAd": true,
   "refreshIntervalHours": 24,
-  "perApp": {},
+  "perApp": {
+    "com.x91932.multiqrscanner": { "probability": 1.0 }
+  },
   "apps": [
     {
       "id": "com.x91932.multiqrscanner",
