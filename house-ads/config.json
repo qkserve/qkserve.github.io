@@ -32,6 +32,7 @@
       "id": "com.x91932.numbereraser",
       "enabled": true,
       "weight": 1,
+      "_iosPending": { "appStoreId": "6808107027", "note": "App Store 審査中（2026-09-17）。公開されたらキー名を ios に変える" },
       "android": { "packageId": "com.x91932.numbereraser" },
       "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.numbereraser.png",
       "title": {
