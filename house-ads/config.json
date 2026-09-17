@@ -3,9 +3,7 @@
   "defaultProbability": 0.2,
   "fillOnNoAd": true,
   "refreshIntervalHours": 24,
-  "perApp": {
-    "com.x91932.furiganamemo": { "probability": 1.0 }
-  },
+  "perApp": {},
   "apps": [
     {
       "id": "com.x91932.multiqrscanner",
