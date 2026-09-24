@@ -14,7 +14,7 @@ QuickServe のアプリ（`qs_house_ads` パッケージを組み込んだもの
 | `refreshIntervalHours` | 端末が設定を取り直す間隔 |
 | `perApp.<バンドルID>` | そのアプリだけ `probability` / `fillOnNoAd` を上書き（省略はトップレベルの値） |
 | `apps[]` | 宣伝するアプリ。`enabled: false` で個別停止、`weight` で出やすさ（重み付き抽選） |
-| `apps[].ios.appStoreId` / `apps[].android.packageId` | 無いプラットフォームでは候補にしない。**ストア公開前のアプリは `_iosPending` / `_androidPending` のように `_` 付きのキーで控えておき（アプリは未知のキーを無視する）、公開されたらキー名を `ios` / `android` に変える**（例: NumberEraser の iOS は 2026-09-17 時点で審査中） |
+| `apps[].ios.appStoreId` / `apps[].android.packageId` | 無いプラットフォームでは候補にしない。**ストア公開前のアプリは `_iosPending` / `_androidPending` のように `_` 付きのキーで控えておき（アプリは未知のキーを無視する）、公開されたらキー名を `ios` / `android` に変える**（例: NumberEraser の iOS は 2026-09-17 の審査中に `_iosPending` で控え、2026-09-24 の公開後に `ios` へ改名） |
 | `apps[].title` / `tagline` / `cta` | ロケール別の文言（`ja` / `en` / `zh` / `zh_Hant`）。無い言語は `en` に落ちる |
 | `apps[].icon` | `icons/<バンドルID>.png`（256×256）。差し替えるときは**ファイル名（URL）を変える**（端末は URL が変わったときだけ取り直す） |
 
