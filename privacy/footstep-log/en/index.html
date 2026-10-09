@@ -33,7 +33,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p class="lang"><a href="../" rel="alternate" hreflang="ja">日本語</a></p>
 
 <h1>Footstep Log Privacy Policy</h1>
-<p class="meta">Applies to: Footstep Log — <code>com.x91932.pedometer</code><br>Effective: August 4, 2026<br>Last updated: September 24, 2026</p>
+<p class="meta">Applies to: Footstep Log — <code>com.x91932.pedometer</code><br>Effective: August 4, 2026<br>Last updated: October 9, 2026</p>
 
 <p>QuickServe Inc. ("we", "us") sets out below how user information is handled in Footstep Log (the "App"), our pedometer and activity-tracking app (this "Policy").</p>
 
@@ -76,15 +76,16 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p><strong>We never use health data for advertising or marketing, and we never provide or sell it to third parties.</strong> It is used solely to display step counts and statistics on your device. You can revoke this permission at any time in your device's health settings.</p>
 
 <h2>7. Information collected by third-party SDKs</h2>
-<p>The App uses the following third-party SDKs for advertising and quality improvement. These SDKs automatically collect the information below and send it to servers operated by Google LLC and its affiliates ("Google").</p>
+<p>The App uses the following third-party SDKs for advertising, quality improvement and map display. These SDKs automatically collect the information below and send it to servers operated by Google LLC and its affiliates ("Google").</p>
 <div class="tablewrap">
 <table>
 <tr><th>SDK</th><th>Main information collected</th><th>Purpose</th></tr>
 <tr><td>Google AdMob<br>(ad delivery)</td><td>Advertising ID (IDFA on iOS / Advertising ID on Android — collected only where permitted by OS settings, applicable law and your consent), ad impression and interaction events, IP address (including inference of approximate location), device information (model, OS version, etc.)</td><td>Delivering ads, measuring their performance, preventing fraud</td></tr>
 <tr><td>Firebase Crashlytics<br>(crash reporting)</td><td>Crash logs, diagnostic and performance information, installation UUID, device and OS information</td><td>Diagnosing defects, improving quality</td></tr>
+<tr><td>Google Maps SDK<br>(map display)</td><td>Requests for map data of the area being displayed, IP address, device information (model, OS version, etc.), an SDK identifier (pseudonymous), map interactions (panning, zooming, etc.), crash information</td><td>Displaying maps, understanding SDK usage, improving quality</td></tr>
 </table>
 </div>
-<p>The App does not use Firebase Analytics or any other usage-analytics SDK. Furthermore, <strong>the location, step and activity data described in Section 3 is never passed to these SDKs.</strong> The "approximate location" inferred by AdMob is derived from your IP address and is separate from the GPS location the App collects.</p>
+<p>The App does not use Firebase Analytics or any other usage-analytics SDK. Furthermore, <strong>the location, step and activity data described in Section 3 is never passed to AdMob or Crashlytics.</strong> On the map screen, the App passes the locations of your recorded routes and current position to the Google Maps SDK to display them on the map. To display the map, map data for the visible area is fetched from Google. The "approximate location" inferred by AdMob is derived from your IP address and is separate from the GPS location the App collects.</p>
 <p>If you contact us, we collect your contact details (such as name and email address), the content of your enquiry and, where necessary, device and OS information, for the purpose of responding. We delete this information after a reasonable period once your enquiry has been resolved.</p>
 
 <h2>8. Disclosure to third parties and external transmission</h2>
@@ -117,6 +118,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <tr><td>Delivering personalized ads</td><td>Consent</td></tr>
 <tr><td>Delivering ads without consent (limited ads) and preventing fraud</td><td>Legitimate interests (sustaining the free App, security)</td></tr>
 <tr><td>Crash reporting (Crashlytics)</td><td>Legitimate interests (maintaining quality on a data-minimizing basis)</td></tr>
+<tr><td>Map display (Google Maps)</td><td>Performance of a contract (displaying the map screen you open)</td></tr>
 <tr><td>Complying with legal obligations</td><td>Legal obligation</td></tr>
 </table>
 </div>

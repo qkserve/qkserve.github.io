@@ -33,7 +33,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p class="lang"><a href="./en/" rel="alternate" hreflang="en">English</a></p>
 
 <h1>足ログ プライバシーポリシー</h1>
-<p class="meta">対象アプリ: 足ログ (Footstep Log) — <code>com.x91932.pedometer</code><br>制定日: 2026年8月4日<br>最終改定日: 2026年9月24日</p>
+<p class="meta">対象アプリ: 足ログ (Footstep Log) — <code>com.x91932.pedometer</code><br>制定日: 2026年8月4日<br>最終改定日: 2026年10月9日</p>
 
 <p>株式会社クイックサーブ (以下「当社」) は、当社が提供する歩数計・行動記録アプリ「足ログ」(以下「本アプリ」) における利用者の情報の取り扱いについて、以下のとおりプライバシーポリシー (以下「本ポリシー」) を定めます。</p>
 
@@ -76,15 +76,16 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p><strong>ヘルスケアデータを広告・マーケティングの目的で使用することはなく、第三者へ提供・販売することもありません。</strong>これらのデータは端末内での歩数表示と統計にのみ使用します。許可は端末のヘルスケア設定からいつでも取り消せます。</p>
 
 <h2>7. 第三者 SDK が取得する情報</h2>
-<p>本アプリは広告表示・品質改善のため以下の第三者 SDK を利用しており、これらの SDK が次の情報を自動的に取得し、Google LLC およびその関連会社 (以下「Google」) のサーバーへ送信します。</p>
+<p>本アプリは広告表示・品質改善・地図表示のため以下の第三者 SDK を利用しており、これらの SDK が次の情報を自動的に取得し、Google LLC およびその関連会社 (以下「Google」) のサーバーへ送信します。</p>
 <div class="tablewrap">
 <table>
 <tr><th>SDK</th><th>取得される主な情報</th><th>利用目的</th></tr>
 <tr><td>Google AdMob<br>(広告配信)</td><td>広告 ID (iOS: IDFA / Android: 広告 ID。取得は OS の設定・法令・利用者の同意状況により許可される場合に限られます)、広告の表示・操作イベント、IP アドレス (おおよその位置の推定を含む)、端末情報 (機種・OS バージョン等)</td><td>広告の配信、効果測定、不正防止</td></tr>
 <tr><td>Firebase Crashlytics<br>(障害解析)</td><td>クラッシュログ、診断・パフォーマンス情報、インストール UUID、端末・OS 情報</td><td>不具合の解析、品質改善</td></tr>
+<tr><td>Google マップ SDK<br>(地図表示)</td><td>表示する範囲の地図データの要求、IP アドレス、端末情報 (機種・OS バージョン等)、SDK の識別子 (仮名)、地図の操作 (移動・拡大縮小等)、クラッシュ情報</td><td>地図の表示、SDK の利用状況の把握、品質改善</td></tr>
 </table>
 </div>
-<p>本アプリは Firebase Analytics 等の利用状況分析 SDK を利用していません。また、<strong>第3条の位置情報・歩数・行動ログがこれらの SDK へ渡されることはありません。</strong>AdMob が推定する「おおよその位置」は IP アドレスに基づくものであり、本アプリが取得する GPS 位置情報とは別のものです。</p>
+<p>本アプリは Firebase Analytics 等の利用状況分析 SDK を利用していません。また、<strong>第3条の位置情報・歩数・行動ログを AdMob・Crashlytics へ渡すことはありません。</strong>地図画面では、記録したルートや現在地を地図上に表示するため、その位置を Google マップ SDK に渡します。地図の表示にあたっては、表示している範囲の地図データが Google から取得されます。AdMob が推定する「おおよその位置」は IP アドレスに基づくものであり、本アプリが取得する GPS 位置情報とは別のものです。</p>
 <p>また、お問い合わせをいただいた場合、氏名・メールアドレス等の連絡先、問い合わせ内容、および必要に応じて端末・OS の情報を、お問い合わせ対応の目的で取得します。これらの情報は、対応完了後、合理的な期間の経過後に削除します。</p>
 
 <h2>8. 第三者への提供・外部送信</h2>
@@ -117,6 +118,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <tr><td>パーソナライズ広告の配信</td><td>同意</td></tr>
 <tr><td>同意がない場合の広告配信 (制限付き広告)・不正防止</td><td>正当な利益 (本アプリの無償提供の維持、セキュリティ)</td></tr>
 <tr><td>障害解析 (Crashlytics)</td><td>正当な利益 (データ最小化を前提とした品質維持)</td></tr>
+<tr><td>地図の表示 (Google マップ)</td><td>契約の履行 (利用者が開いた地図画面の表示)</td></tr>
 <tr><td>法令上の義務への対応</td><td>法的義務</td></tr>
 </table>
 </div>
