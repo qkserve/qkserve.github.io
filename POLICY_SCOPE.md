@@ -19,6 +19,7 @@
 | アプリ | Bundle ID / Package | リンク開始日 |
 |---|---|---|
 | Multi QR Reader | com.x91932.multiqrscanner | 2026-07-21 |
+| 漢字ダンジョン (Kanji Dungeon) | com.x91932.fontdungeon | 準備中（2026-10-13。AdMob のみ・アカウントなし・データは端末内のみ・UMP 同意フォームあり。**iOS ATT と「広告のプライバシー設定」の導線は未実装で、審査提出の前に入れてからリンク開始**） |
 
 ## 専用ポリシーを持つアプリ (共通ポリシー非適用)
 
