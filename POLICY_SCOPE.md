@@ -24,7 +24,7 @@
 
 | アプリ | Bundle ID / Package | ポリシー | 共通ポリシーを使わない理由 |
 |---|---|---|---|
-| 足ログ (Footstep Log) | com.x91932.pedometer | `/privacy/footstep-log/` | ① 位置情報 (バックグラウンド含む) とヘルスケアデータを扱い、共通ポリシー第4条の記述範囲を超える ② ユーザー操作による iCloud バックアップ機能があり「端末内にのみ保存」が成り立たない ③ Firebase Analytics を使っていないため、共通ポリシー第3条の記載が実態と合わない |
+| 足ログ (Footstep Log) | com.x91932.pedometer | `/privacy/footstep-log/` | ① 位置情報 (バックグラウンド含む) とヘルスケアデータを扱い、共通ポリシー第4条の記述範囲を超える ② ユーザー操作による iCloud バックアップ機能があり「端末内にのみ保存」が成り立たない ③ Google マップ SDK・ヘルスケア・ファイルへの書き出しなど共通ポリシーに無い SDK・機能を扱う (当初の理由「Firebase Analytics を使っていない」は 2026-10-15 の Analytics 導入で外れた。①②だけでも専用ポリシーは必要) |
 | ここメモ (CocoMemo) | com.x91932.cocomemo | `/privacy/cocomemo/` | ① バックグラウンド位置情報を扱う ② 匿名アカウント (Firebase Auth) を発行し、ニックネーム・共有メモ・コメント・FCM トークン・プレミアム状態を Firestore に保存するため「端末内にのみ保存」「アカウント登録なし」が成り立たない ③ Firebase Analytics 不使用、FCM / App Check / アプリ内課金を利用 ④ ATT・UMP 同意フォーム未実装 (共通ポリシー第7条の「広告のプライバシー設定」導線が無い) |
 | ふりがなメモ (Furigana Memo) | com.x91932.furiganamemo | `/privacy/furiganamemo/` | 広告 SDK・Firebase Analytics / Crashlytics を一切使わず ATT / UMP も無いため、共通ポリシー第3条・第7条の記載 (AdMob / Analytics / 広告のプライバシー設定) が実態と合わない。収集する情報が無い旨を明記した専用ポリシーが必要 |
 
