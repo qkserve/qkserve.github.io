@@ -62,7 +62,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 </table>
 </div>
 <p>Uninstalling the App removes this data from your device. However, copies stored by OS backup features (such as iCloud Backup or Google Backup) may persist in accordance with the settings and retention periods of the OS provider and may be restored when you reinstall.</p>
-<p>The App has no text-entry features, and apart from your answers in the game it does not ask for any input that identifies you.</p>
+<p>The App has no text-entry features, and nothing you type is ever sent as an event.</p>
 
 <h2>4. Online leaderboards</h2>
 <p>The App has online leaderboards for competing on score. On iOS it uses Apple Game Center; on Android it uses Google Play Games services.</p>
@@ -83,11 +83,11 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <table>
 <tr><th>SDK</th><th>Main information collected</th><th>Purpose</th></tr>
 <tr><td>Google AdMob<br>(ad delivery: banner, full-screen and rewarded ads)</td><td>Advertising ID (IDFA on iOS / Advertising ID on Android — collected only where permitted by OS settings, applicable law and your consent), ad impression and interaction events, IP address (including inference of approximate location), device information (model, OS version, etc.)</td><td>Delivering ads, measuring their performance, preventing fraud</td></tr>
-<tr><td>Firebase Analytics<br>(usage analytics)</td><td>Identifiers such as the app instance ID, screen views, events about game progress such as difficulty, floor reached and number of correct answers, device and OS information, approximate region based on IP address</td><td>Improving the App through usage analysis<br>* In regions where consent is required, not collected unless you consent (Section 8)</td></tr>
+<tr><td>Firebase Analytics<br>(usage analytics)</td><td>Identifiers such as the app instance ID, screen views, game-progress events such as run start (starting floor, difficulty), floor cleared (floor, remaining steps), game over (floor, score, reason), run completed (score, bonus, difficulty) and continuing after watching an ad, plus events for when a promotion for one of our other apps is shown or tapped, device and OS information, approximate region based on IP address</td><td>Improving the App through usage analysis<br>* In regions where consent is required, not collected unless you consent (Section 8)</td></tr>
 <tr><td>Firebase Crashlytics<br>(crash reporting)</td><td>Crash logs, diagnostic and performance information, installation UUID, device and OS information</td><td>Diagnosing defects, improving quality</td></tr>
 </table>
 </div>
-<p>These events never include input that identifies you, other than your answers in the game.</p>
+<p>The App has no text-entry features, and nothing you type is ever sent as an event.</p>
 <p>If you contact us, we collect your contact details (such as name and email address), the content of your enquiry and, where necessary, device and OS information, for the purpose of responding. We delete this information after a reasonable period once your enquiry has been resolved.</p>
 
 <h2>6. Disclosure to third parties and external transmission</h2>
@@ -98,8 +98,8 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <li><a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">How Google uses information from sites or apps that use its services</a></li>
 <li><a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">Privacy and Security in Firebase</a></li>
 </ul>
-<p>In place of a Google AdMob ad, the banner slot in the App may show <strong>a promotion for one of our other apps</strong>. Such a promotion only displays information we have prepared (app name, description, icon and a link to the store) and involves no collection or transmission of information about you.</p>
-<p>To show these promotions, the App periodically retrieves the promotion information (app name, description and icon) from our website (qkserve.github.io, hosted on GitHub Pages operated by GitHub, Inc.). As with viewing any web page, connection information such as your IP address reaches GitHub's servers during this retrieval; we do not collect or store it, and <strong>neither your actions in the App nor the data described in Section 3 are transmitted</strong>.</p>
+<p>In place of a Google AdMob ad, the banner slot in the App may show <strong>a promotion for one of our other apps</strong>. Such a promotion displays information we have prepared (app name, description, icon and a link to the store). To measure effectiveness, when a promotion is shown or tapped it is recorded as a Firebase Analytics event described in Section 5 (including the ID of the promoted app); in regions where consent is required, only if you have consented.</p>
+<p>To show these promotions, the App periodically retrieves the promotion information (app name, description and icon) from our website (qkserve.github.io, hosted on GitHub Pages operated by GitHub, Inc.). As with viewing any web page, connection information such as your IP address reaches GitHub's servers during this retrieval; we do not collect or store it, and <strong>the data described in Section 3 is never transmitted</strong>.</p>
 
 <h2>7. International data transfers</h2>
 <p>The destinations in Sections 4 and 5 include servers of Apple and Google located in the United States and other countries outside Japan. Google applies appropriate safeguards, including compliance with the EU Standard Contractual Clauses. Details of the destinations and safeguards are available in "Privacy and Security in Firebase" above and in each company's privacy policy.</p>
