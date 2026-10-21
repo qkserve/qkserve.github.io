@@ -67,6 +67,27 @@
         "zh_Hant": "任何字詞隨心標讀音"
       },
       "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.pedometer",
+      "enabled": true,
+      "weight": 1,
+      "_iosPending": { "appStoreId": "6795458978" },
+      "android": { "packageId": "com.x91932.pedometer" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.pedometer.png",
+      "title": {
+        "ja": "足ログ",
+        "en": "Footstep Log",
+        "zh": "足迹日志",
+        "zh_Hant": "足跡日誌"
+      },
+      "tagline": {
+        "ja": "歩数・移動ルート・滞在を自動記録",
+        "en": "Auto-log steps, routes & stays",
+        "zh": "自动记录步数、路线和停留",
+        "zh_Hant": "自動記錄步數、路線與停留"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
     }
   ]
 }
