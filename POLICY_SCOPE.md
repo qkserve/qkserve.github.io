@@ -29,6 +29,7 @@
 | ここメモ (CocoMemo) | com.x91932.cocomemo | `/privacy/cocomemo/` | ① バックグラウンド位置情報を扱う ② 匿名アカウント (Firebase Auth) を発行し、ニックネーム・共有メモ・コメント・FCM トークン・プレミアム状態を Firestore に保存するため「端末内にのみ保存」「アカウント登録なし」が成り立たない ③ Firebase Analytics 不使用、FCM / App Check / アプリ内課金を利用 ④ ATT・UMP 同意フォーム未実装 (共通ポリシー第7条の「広告のプライバシー設定」導線が無い) |
 | 盲牌 - Blind Draw - (Blind Draw: Mahjong Touch) | com.x91932.moupai | `/privacy/blind-draw/` | ① Game Center (iOS) / Google Play ゲーム (Android) のランキングにクリアのタイムを送り、共通ポリシーに無い記述が必要 (表示名・アイコンはストアのサービスが出し、アプリは読まない・保存しない) ② 広告を見て続けるリワード広告と、自社アプリ紹介 (house-ads の設定 JSON の取得と、紹介の表示・タップの Analytics イベント) を扱う ③ 振動を使う。漢字ダンジョンの専用ポリシーと同じ構成。公開前 (2026-10-21 制定)。同意の変更・撤回はアプリの「設定」画面の「広告のプライバシー設定」(対象地域でのみ表示。moupai 90b560a) から行える |
 | ふりがなメモ (Furigana Memo) | com.x91932.furiganamemo | `/privacy/furiganamemo/` | 広告 SDK・Firebase Analytics / Crashlytics を一切使わず ATT / UMP も無いため、共通ポリシー第3条・第7条の記載 (AdMob / Analytics / 広告のプライバシー設定) が実態と合わない。収集する情報が無い旨を明記した専用ポリシーが必要 |
+| GRAVIS | com.x91932.gravis | `/privacy/gravis/` | ① ヘルスケアのデータ (アクティブエネルギー) を読み取り、共通ポリシーの記述範囲を超える ② 利用 SDK は AdMob (バナー) のみで、Firebase Analytics / Crashlytics を使わない ③ 日本のみで配信し、UMP 同意フォームと「広告のプライバシー設定」の導線を持たない (ATT はあり)。公開前 (2026-10-30 制定)。日本語版のみ |
 
 専用ポリシー側も、共通ポリシーの改定 (SDK 追加・同意の取り扱い変更など) の影響を受ける。
 **共通ポリシーを改定したら、専用ポリシー側も同じ観点で見直すこと。**
