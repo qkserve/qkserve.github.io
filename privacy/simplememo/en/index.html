@@ -63,7 +63,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <tr><td>Records used to manage when the review request is shown</td><td>Avoiding showing the request too often</td></tr>
 </table>
 </div>
-<p>On iOS, the data is stored in an App Group container, and the App's share extension and widgets read and write the same data. Uninstalling the App deletes this data from your device, but copies saved by the OS backup feature (iCloud Backup / Google Backup, etc.) remain according to that OS provider's settings and retention periods, and may be restored when you reinstall.</p>
+<p>On iOS, the data is stored in an App Group container, and the App's share extension and widgets read and write the same data. Uninstalling the App deletes this data from your device, but copies saved by the OS backup feature (iCloud Backup / Google Backup, etc.) remain according to that OS provider's settings and retention periods, and may be restored when you reinstall. However, passcode information kept in the iOS Keychain may remain on your device after the App is deleted.</p>
 
 <h3>Photos</h3>
 <p>Only the images you choose are placed on a canvas and saved on your device. The App does not read your entire photo library. Photos you take with the camera are likewise added to the canvas and stored on your device.</p>
@@ -131,7 +131,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 
 <h2>12. Deleting your data</h2>
 <ul>
-<li>Deleting (uninstalling) the App removes the data on your device (except for the backups described in Section 3).</li>
+<li>Deleting (uninstalling) the App removes the data on your device (except for the backups described in Section 3). However, passcode information kept in the iOS Keychain may remain on your device after the App is deleted.</li>
 <li>Data in the cloud can be deleted by you from your iCloud settings or from "Manage apps" in Google Drive.</li>
 </ul>
 
