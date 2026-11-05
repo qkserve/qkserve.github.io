@@ -10,7 +10,7 @@
   var JAPANESE = 'ja';
   var ENGLISH_PATH = 'en/';
   // 検索エンジンを移すと、日本語版が検索結果から消えるおそれがある
-  var CRAWLER_PATTERN = /bot|crawl|spider|slurp|lighthouse/i;
+  var CRAWLER_PATTERN = /bot|crawl|spider|slurp|lighthouse|yeti/i;
 
   // プライベートブラウズなどでは保存が例外になるので、読み書きとも失敗を無視する
   function readChoice() {
