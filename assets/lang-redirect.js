@@ -40,7 +40,7 @@
 
   var englishUrl = new URL(ENGLISH_PATH, location.href).href;
   // 保存できない環境でも、英語版の「日本語」リンクで戻された人を押し返さない
-  if (document.referrer === englishUrl) return;
+  if (document.referrer.split(/[?#]/)[0] === englishUrl) return;
 
   var language = readChoice() || navigator.language;
   if (!language || language.toLowerCase().indexOf(JAPANESE) === 0) return;
