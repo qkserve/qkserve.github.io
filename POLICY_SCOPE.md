@@ -19,7 +19,7 @@
 | アプリ | Bundle ID / Package | リンク開始日 |
 |---|---|---|
 | Multi QR Reader | com.x91932.multiqrscanner | 2026-07-21 |
-| 車のナンバー隠し (Hide License Plate) | com.x91932.numbereraser | 公開済み（適格条件の確認は 2026-11-05。AdMob・Firebase Analytics / Crashlytics のみ・アカウントなし・写真の処理は端末内のみ・ATT / UMP / 広告のプライバシー設定あり。ML Kit は未接続のカメラ経路でしか使わない。カメラ経路をつなぐときは再確認） |
+| 車のナンバー隠し (Hide License Plate) | com.x91932.numbereraser | 公開済み（適格条件の確認は 2026-11-05。AdMob・Firebase Analytics / Crashlytics のみ・アカウントなし・写真の処理は端末内のみ・ATT / UMP / 広告のプライバシー設定あり。自社アプリ紹介の取得と house_ad イベントは共通ポリシー第5条の範囲。**SDK の条件の例外**: ML Kit がバイナリに同梱されるが、未接続のカメラ経路でしか使わず初期化されないので、データは送られない。カメラ経路をつなぐ場合は共通ポリシーの改定が必要。依存を外せば例外は無くなる） |
 | 漢字ダンジョン (Kanji Dungeon) | com.x91932.fontdungeon | 準備中（2026-10-13。AdMob のみ・アカウントなし・データは端末内のみ・UMP 同意フォームあり。**iOS ATT と「広告のプライバシー設定」の導線は未実装で、審査提出の前に入れてからリンク開始**） |
 
 ## 専用ポリシーを持つアプリ (共通ポリシー非適用)
