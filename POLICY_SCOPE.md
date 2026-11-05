@@ -5,7 +5,7 @@
 ## 適格条件チェックリスト
 
 - [ ] アカウント登録機能がない (氏名・メールアドレス等を当社が直接収集しない)
-- [ ] 利用 SDK が Google AdMob / Firebase Analytics / Firebase Crashlytics のみ (広告ネットワーク追加・mediation・別 Analytics は不可)
+- [ ] 利用 SDK が Google AdMob / Firebase Analytics / Firebase Crashlytics のみ (広告ネットワーク追加・mediation・別 Analytics は不可。ただし、バイナリに同梱されるだけで初期化されず、データを送らない SDK は、下の表の行に理由を書く場合に限り例外とする)
 - [ ] Analytics / Crashlytics へユーザー生成コンテンツ (スキャン内容・URL・自由入力文字列) を送らない実装契約がある (enum 引数のみ等)
 - [ ] ユーザーがアプリ内で作成・保存するデータは端末内にのみ保存され、当社サーバーへ送信されない
 - [ ] iOS ATT を実装し、EEA/UK 等では UMP 同意フォームを表示する
