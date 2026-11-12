@@ -21,9 +21,9 @@
         "bn": "QR ও বারকোড স্ক্যানার",
         "de": "QR- & Barcode-Scanner",
         "es": "Lector QR y Código de Barras",
-        "fr": "Scanner QR Code & Code Barre",
+        "fr": "Scanner QR & code-barres",
         "hi": "क्यूआर कोड और बारकोड स्कैनर",
-        "id": "Scan QR Code & Barcode",
+        "id": "Pemindai QR & Barcode",
         "it": "Scanner QR e Codice a Barre",
         "ko": "QR코드·바코드 스캐너",
         "mr": "QR कोड व बारकोड स्कॅनर",
@@ -31,12 +31,12 @@
         "pl": "Skaner QR i kodów kreskowych",
         "pt": "Leitor QR e Código de Barras",
         "ru": "Сканер QR и штрих-кодов",
-        "sv": "QR- & streckkodsläsare",
+        "sv": "QR- och streckkodsläsare",
         "te": "QR & బార్‌కోడ్ స్కానర్",
         "th": "เครื่องสแกน QR และบาร์โค้ด",
         "tr": "QR Kod ve Barkod Tarayıcı",
         "ur": "QR اور بارکوڈ اسکینر",
-        "vi": "Máy Quét Mã QR và Mã Vạch"
+        "vi": "Máy quét mã QR và mã vạch"
       },
       "tagline": {
         "ja": "複数のQR・バーコードを一括スキャン",
