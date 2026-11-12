@@ -50,11 +50,10 @@
     .hero h1 .gold{display:block;color:var(--gold-soft)}
     .hero-desc{max-width:530px;margin:28px 0 0;color:#cbd1dc;font-size:1.02rem;line-height:1.9}
     .store-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-    .store-btn{display:flex;align-items:center;min-width:185px;min-height:62px;padding:11px 18px;border:1px solid rgba(255,255,255,.28);border-radius:7px;background:#080d17;color:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
-    .store-btn:hover{transform:translateY(-2px);border-color:var(--gold);background:#121b2d}
-    .store-btn small,.store-btn strong{display:block}
-    .store-btn small{color:#aeb6c3;font-size:.66rem;line-height:1.2;letter-spacing:.04em}
-    .store-btn strong{margin-top:2px;font-size:1rem;line-height:1.2;letter-spacing:-.01em}
+    /* 公式バッジは画像をそのまま使う（各社のガイドラインで改変不可）。高さだけ 2 つでそろえる */
+    .store-badge{display:inline-block;line-height:0;border-radius:9px;transition:transform .2s ease}
+    .store-badge:hover{transform:translateY(-2px)}
+    .store-badge img{display:block;width:auto;height:52px}
     .mockup-stage{position:relative;height:650px;margin-top:30px}
     .phone{position:absolute;overflow:hidden;border:7px solid #293348;border-radius:30px;background:#0b1019;box-shadow:var(--shadow)}
     .phone::after{content:"";position:absolute;z-index:3;top:7px;left:50%;width:34%;height:5px;border-radius:10px;background:#121a29;transform:translateX(-50%)}
@@ -108,6 +107,7 @@
     .cta .store-row{justify-content:center}
     footer{padding:42px 0;background:#0a101d;color:#99a3b4;font-size:.78rem}
     .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .tm{margin-top:22px;margin-bottom:0;color:#8a95a6;font-size:.68rem;line-height:1.7}
     .footer-links{display:flex;flex-wrap:wrap;gap:22px}
     .footer-links a{text-underline-offset:4px}
     a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
@@ -116,7 +116,7 @@
       .hero{min-height:auto}.hero-grid{grid-template-columns:1fr;gap:0;min-height:auto;padding-top:110px}.hero-copy{padding:52px 0 16px}.hero h1{font-size:clamp(3.5rem,12vw,5.8rem)}.mockup-stage{width:min(610px,100%);height:620px;margin-inline:auto}.features-head{grid-template-columns:1fr;gap:22px}.feature-grid{grid-template-columns:1fr}.feature{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.feature:last-child{border-bottom:0}.feature h3{margin-top:46px}.step-list{grid-template-columns:1fr}.step{padding:34px 0}.step+.step{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.17)}.use-layout{grid-template-columns:1fr;gap:52px}.gallery-head{display:block}.gallery-hint{display:block;margin-top:16px}.shot-track{grid-template-columns:repeat(5,210px);width:auto;margin:44px 0 0;padding:12px 24px 38px;scroll-padding-inline:24px}
     }
     @media(max-width:600px){
-      .wrap{width:min(100% - 32px,1160px)}.header-inner{min-height:72px}.brand{gap:9px;font-size:.9rem}.brand img{width:32px;height:32px}.lang{font-size:.68rem}.hero-grid{padding-top:84px}.hero-copy{padding-top:44px}.hero h1{font-size:clamp(3.25rem,16vw,4.45rem)}.hero-desc{font-size:.93rem}.store-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.store-btn{min-width:0;min-height:58px;padding:10px 12px}.store-btn small{font-size:.58rem}.store-btn strong{font-size:.88rem}.mockup-stage{height:475px;margin-top:8px}.phone{border-width:5px;border-radius:22px}.phone-main{width:45vw;max-width:180px;height:auto;aspect-ratio:540/1175;right:50%;top:45px;transform:translateX(50%);animation:none}.phone-left,.phone-right{width:31vw;max-width:124px;height:auto;aspect-ratio:540/1175;top:117px}.phone-left{left:0}.phone-right{right:0}.features,.steps,.gallery,.uses{padding:92px 0}.features-head{margin-bottom:44px}.section-title{font-size:2.55rem}.feature{padding:34px 18px}.gallery-head{display:block}.gallery-hint{display:block;margin-top:16px}.shot-track{grid-template-columns:repeat(5,190px);gap:16px;width:auto;margin:38px 0 0;padding:12px 16px 38px;scroll-padding-inline:16px}.use-layout{gap:36px}.cta{padding:96px 0}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:16px 20px}
+      .wrap{width:min(100% - 32px,1160px)}.header-inner{min-height:72px}.brand{gap:9px;font-size:.9rem}.brand img{width:32px;height:32px}.lang{font-size:.68rem}.hero-grid{padding-top:84px}.hero-copy{padding-top:44px}.hero h1{font-size:clamp(3.25rem,16vw,4.45rem)}.hero-desc{font-size:.93rem}.store-row{gap:10px}.store-badge img{height:44px}.mockup-stage{height:475px;margin-top:8px}.phone{border-width:5px;border-radius:22px}.phone-main{width:45vw;max-width:180px;height:auto;aspect-ratio:540/1175;right:50%;top:45px;transform:translateX(50%);animation:none}.phone-left,.phone-right{width:31vw;max-width:124px;height:auto;aspect-ratio:540/1175;top:117px}.phone-left{left:0}.phone-right{right:0}.features,.steps,.gallery,.uses{padding:92px 0}.features-head{margin-bottom:44px}.section-title{font-size:2.55rem}.feature{padding:34px 18px}.gallery-head{display:block}.gallery-hint{display:block;margin-top:16px}.shot-track{grid-template-columns:repeat(5,190px);gap:16px;width:auto;margin:38px 0 0;padding:12px 16px 38px;scroll-padding-inline:16px}.use-layout{gap:36px}.cta{padding:96px 0}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:16px 20px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
   </style>
@@ -136,10 +136,7 @@
           <p class="eyebrow">NumberEraser · iOS / Android</p>
           <h1>隠す。でも、<span class="gold">写真は<wbr>そのまま。</span></h1>
           <p class="hero-desc">AIが車のナンバープレートを見つけ、選んだプレートを角度に合わせて合成。ぼかしやモザイクとは違う、車の写真になじむナンバー隠しです。</p>
-          <div class="store-row" aria-label="アプリを入手">
-            <a class="store-btn" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><span><small>iPhone / iPad</small><strong>App Store で入手</strong></span></a>
-            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><span><small>Android</small><strong>Google Play で入手</strong></span></a>
-          </div>
+          <div class="store-row" aria-label="アプリを入手"><a class="store-badge" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><img src="img/badges/app-store-ja.svg" width="141" height="52" alt="App Store からダウンロード"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><img src="img/badges/google-play-ja.png" width="175" height="52" alt="Google Play で手に入れよう"></a></div>
         </div>
         <div class="mockup-stage" aria-label="アプリ画面のプレビュー">
           <div class="phone phone-left"><img src="img/iphone_7895.webp" width="540" height="1175" alt="正面から写した車のナンバーを文字入りのプレートで隠した編集画面"></div>
@@ -193,10 +190,10 @@
     </section>
 
     <section class="cta" aria-labelledby="cta-title">
-      <div class="wrap cta-inner"><img class="cta-icon" src="img/icon.png" width="256" height="256" loading="lazy" alt="車のナンバー隠し アプリアイコン"><p class="eyebrow">NumberEraser</p><h2 id="cta-title">写真を選んで、<br>ナンバーを隠す。</h2><p>アプリは無料で、広告が表示されます。iOS / Android に対応。</p><div class="store-row" aria-label="アプリを入手"><a class="store-btn" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><span><small>iPhone / iPad</small><strong>App Store で入手</strong></span></a><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><span><small>Android</small><strong>Google Play で入手</strong></span></a></div></div>
+      <div class="wrap cta-inner"><img class="cta-icon" src="img/icon.png" width="256" height="256" loading="lazy" alt="車のナンバー隠し アプリアイコン"><p class="eyebrow">NumberEraser</p><h2 id="cta-title">写真を選んで、<br>ナンバーを隠す。</h2><p>アプリは無料で、広告が表示されます。iOS / Android に対応。</p><div class="store-row" aria-label="アプリを入手"><a class="store-badge" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><img src="img/badges/app-store-ja.svg" width="141" height="52" alt="App Store からダウンロード"></a><a class="store-badge" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><img src="img/badges/google-play-ja.png" width="175" height="52" alt="Google Play で手に入れよう"></a></div></div>
     </section>
   </main>
 
-  <footer><div class="wrap footer-inner"><nav class="footer-links" aria-label="フッターナビゲーション"><a href="./support/">サポート</a><a href="./terms/">利用規約</a><a href="/privacy/">プライバシーポリシー</a></nav><span>© 株式会社クイックサーブ</span></div></footer>
+  <footer><div class="wrap footer-inner"><nav class="footer-links" aria-label="フッターナビゲーション"><a href="./support/">サポート</a><a href="./terms/">利用規約</a><a href="/privacy/">プライバシーポリシー</a></nav><span>© 株式会社クイックサーブ</span></div><p class="wrap tm">Apple、Apple のロゴ、iPhone、iPad は、米国その他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。Google Play および Google Play ロゴは Google LLC の商標です。</p></footer>
 </body>
 </html>
