@@ -95,6 +95,8 @@
     /* 横スクロールする幅ではキーボードでも送れるようにフォーカスを受ける */
     .shot-track:focus-visible{outline:3px solid var(--gold-ink);outline-offset:4px}
     .shot{scroll-snap-align:start;margin:0}
+    /* 英語版でも日本語 UI のスクショを使っているための断り書き */
+    .screens-note{margin:18px 0 0;color:var(--muted);font-size:.85rem}
     .shot-frame{overflow:hidden;border:7px solid #e6dfcf;border-radius:29px;background:var(--navy);box-shadow:0 18px 45px rgba(30,40,56,.14)}
     .shot-frame img{display:block;width:100%;aspect-ratio:540/1175;object-fit:cover}
     .shot figcaption{display:flex;align-items:center;gap:10px;margin-top:18px;color:#4d5563;font-size:.8rem;font-weight:700}
@@ -178,7 +180,7 @@
     </section>
 
     <section class="gallery" aria-labelledby="gallery-title">
-      <div class="wrap gallery-head"><div><p class="eyebrow">Inside the app</p><h2 class="section-title" id="gallery-title">Fine-tune it.<br>Then share.</h2></div><p class="gallery-hint">Scroll to explore →</p></div>
+      <div class="wrap gallery-head"><div><p class="eyebrow">Inside the app</p><h2 class="section-title" id="gallery-title">Fine-tune it.<br>Then share.</h2><p class="screens-note">Screens shown in Japanese. The app is also available in English.</p></div><p class="gallery-hint">Scroll to explore →</p></div>
       <div class="shot-track" role="region" tabindex="0" aria-label="App screenshots">
         <figure class="shot"><div class="shot-frame"><img src="../img/iphone_7893.webp" width="540" height="1175" loading="lazy" alt="Editor after automatic detection and compositing"></div><figcaption><span>01</span>Auto detect & composite</figcaption></figure>
         <figure class="shot"><div class="shot-frame"><img src="../img/iphone_7894.webp" width="540" height="1175" loading="lazy" alt="Adjusting the four corners of a detected plate"></div><figcaption><span>02</span>Fine-tune corners</figcaption></figure>
