@@ -104,7 +104,7 @@
         "zh": "NumberEraser 车牌打码",
         "zh_Hant": "NumberEraser 車牌遮蔽",
         "ar": "إخفاء لوحة السيارة",
-        "bn": "লাইসেন্স প্লেট লুকান",
+        "bn": "নম্বর প্লেট লুকান",
         "de": "Kennzeichen weg",
         "es": "Tapa matrícula",
         "fr": "Masquer plaque auto",
@@ -147,7 +147,7 @@
         "te": "ఫోటోలలో నంబర్ ప్లేట్‌లను ఆటోమేటిక్‌గా దాచండి",
         "th": "ซ่อนทะเบียนรถในรูปอัตโนมัติ",
         "tr": "Fotoğraflardaki plakaları otomatik gizler",
-        "ur": "تصاویر میں نمبر پلیٹ خودکار چھپائیں",
+        "ur": "تصاویر میں نمبر پلیٹیں خود بخود چھپائیں",
         "vi": "Tự động che biển số trong ảnh"
       },
       "cta": {
