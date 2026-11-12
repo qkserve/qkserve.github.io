@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>車のナンバー隠し | AIで検出、プレートで自然に隠す</title>
+  <meta name="description" content="車の写真のナンバープレートをAIで自動検出。ぼかしやモザイクではなく、好きなプレートを合成して自然に隠せるiOS・Androidアプリです。">
+  <meta name="theme-color" content="#111a2d">
+  <link rel="icon" href="img/icon.png">
+  <link rel="canonical" href="https://qkserve.github.io/number-eraser/">
+  <link rel="alternate" hreflang="ja" href="https://qkserve.github.io/number-eraser/">
+  <link rel="alternate" hreflang="en" href="https://qkserve.github.io/number-eraser/en/">
+  <link rel="alternate" hreflang="x-default" href="https://qkserve.github.io/number-eraser/">
+  <meta property="og:title" content="車のナンバー隠し | AIで検出、プレートで自然に隠す">
+  <meta property="og:description" content="ぼかしやモザイクではなく、プレートを合成。車の写真の見た目を保ったままナンバーを隠せます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://qkserve.github.io/number-eraser/">
+  <meta property="og:image" content="https://qkserve.github.io/number-eraser/img/icon.png">
+  <meta name="twitter:card" content="summary">
+  <script src="/assets/lang-redirect.js"></script>
+  <style>
+    :root{--navy:#111a2d;--navy-2:#1d2d4e;--cream:#f3efe4;--paper:#faf8f1;--gold:#c8a24a;--gold-soft:#e4d39c;--ink:#172137;--muted:#687080;--line:rgba(23,33,55,.15);--white:#fff;--shadow:0 26px 70px rgba(13,21,37,.2);--radius:24px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--cream)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;height:auto}
+    a{color:inherit}
+    .wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .eyebrow{margin:0 0 18px;color:var(--gold);font-size:.75rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+    .section-title{max-width:820px;margin:0;word-break:keep-all;overflow-wrap:anywhere;font-size:clamp(2.15rem,5vw,4.7rem);font-weight:900;line-height:1.06;letter-spacing:-.055em}
+    .section-lead{max-width:650px;margin:24px 0 0;color:var(--muted);font-size:1rem}
+    .site-header{position:absolute;z-index:20;inset:0 0 auto;color:#fff}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:88px;border-bottom:1px solid rgba(255,255,255,.13)}
+    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:-.02em}
+    .brand img{display:block;width:38px;height:38px;border-radius:10px}
+    .lang{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;letter-spacing:.06em}
+    .lang a{padding:8px 2px;text-decoration:none;color:rgba(255,255,255,.66)}
+    .lang a[aria-current="page"]{color:#fff;border-bottom:1px solid var(--gold)}
+    .lang span{color:rgba(255,255,255,.24)}
+    .hero{position:relative;min-height:820px;overflow:hidden;background:var(--navy);color:#fff}
+    .hero::before{content:"";position:absolute;width:880px;height:430px;right:-110px;top:210px;border:1px solid rgba(200,162,74,.24);border-radius:50%;transform:rotate(-9deg)}
+    .hero::after{content:"";position:absolute;width:690px;height:310px;right:-30px;top:260px;border:1px solid rgba(255,255,255,.09);border-radius:50%;transform:rotate(8deg)}
+    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr);align-items:center;gap:50px;min-height:820px;padding-top:102px}
+    .hero-copy{padding:60px 0 76px}
+    .hero h1{margin:0;word-break:keep-all;font-size:clamp(3.2rem,6.3vw,6.6rem);font-weight:900;line-height:.96;letter-spacing:-.075em}
+    .hero h1 .gold{display:block;color:var(--gold-soft)}
+    .hero-desc{max-width:530px;margin:28px 0 0;color:#cbd1dc;font-size:1.02rem;line-height:1.9}
+    .store-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+    .store-btn{display:flex;align-items:center;min-width:185px;min-height:62px;padding:11px 18px;border:1px solid rgba(255,255,255,.28);border-radius:7px;background:#080d17;color:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .store-btn:hover{transform:translateY(-2px);border-color:var(--gold);background:#121b2d}
+    .store-btn small,.store-btn strong{display:block}
+    .store-btn small{color:#aeb6c3;font-size:.66rem;line-height:1.2;letter-spacing:.04em}
+    .store-btn strong{margin-top:2px;font-size:1rem;line-height:1.2;letter-spacing:-.01em}
+    .mockup-stage{position:relative;height:650px;margin-top:30px}
+    .phone{position:absolute;overflow:hidden;border:7px solid #293348;border-radius:30px;background:#0b1019;box-shadow:var(--shadow)}
+    .phone::after{content:"";position:absolute;z-index:3;top:7px;left:50%;width:34%;height:5px;border-radius:10px;background:#121a29;transform:translateX(-50%)}
+    .phone img{display:block;width:100%;height:100%;object-fit:cover}
+    .phone-main{z-index:3;width:238px;height:529px;right:150px;top:62px;border-color:#ede7d7;animation:float 7s ease-in-out infinite}
+    .phone-left{z-index:2;width:174px;height:387px;left:10px;top:170px;transform:rotate(-8deg)}
+    .phone-right{z-index:1;width:174px;height:387px;right:-10px;top:125px;transform:rotate(9deg)}
+    .detect-mark{position:absolute;z-index:5;right:98px;top:268px;width:100px;height:66px;color:var(--gold);filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
+    .detect-mark i{position:absolute;width:21px;height:21px;border-color:currentColor;border-style:solid}
+    .detect-mark i:nth-child(1){left:0;top:0;border-width:2px 0 0 2px}.detect-mark i:nth-child(2){right:0;top:0;border-width:2px 2px 0 0}.detect-mark i:nth-child(3){right:0;bottom:0;border-width:0 2px 2px 0}.detect-mark i:nth-child(4){left:0;bottom:0;border-width:0 0 2px 2px}
+    .hero-note{position:absolute;z-index:6;right:12px;bottom:52px;color:#9ba6b8;font-size:.68rem;font-weight:700;letter-spacing:.16em;writing-mode:vertical-rl}
+    .features{padding:132px 0 150px;background:var(--paper)}
+    .features-head{display:grid;grid-template-columns:1.2fr .8fr;align-items:end;gap:70px;margin-bottom:68px}
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .feature{position:relative;min-height:380px;padding:42px 34px 38px;border-right:1px solid var(--line)}
+    .feature:last-child{border-right:0}
+    .feature-num{display:flex;align-items:center;gap:10px;color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.15em}
+    .feature-num::after{content:"";width:42px;height:1px;background:currentColor}
+    .feature h3{margin:72px 0 20px;font-size:1.65rem;line-height:1.25;letter-spacing:-.04em}
+    .feature p{margin:0;color:var(--muted);font-size:.92rem}
+    .feature-plate{position:absolute;right:30px;top:36px;width:76px;height:38px;border:1px solid rgba(23,33,55,.25);border-radius:7px}
+    .feature-plate::before,.feature-plate::after{content:"";position:absolute;top:50%;width:4px;height:4px;border:1px solid rgba(23,33,55,.3);border-radius:50%;transform:translateY(-50%)}
+    .feature-plate::before{left:8px}.feature-plate::after{right:8px}
+    .steps{position:relative;padding:140px 0;background:var(--navy-2);color:#fff;overflow:hidden}
+    .steps::after{content:"";position:absolute;left:50%;bottom:-250px;width:900px;height:430px;border:1px solid rgba(200,162,74,.15);border-radius:50%;transform:translateX(-50%)}
+    .steps .section-title{max-width:700px}
+    .step-list{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:76px;border-top:1px solid rgba(255,255,255,.17)}
+    .step{padding:38px 38px 8px 0}
+    .step+.step{padding-left:38px;border-left:1px solid rgba(255,255,255,.17)}
+    .step strong{display:block;color:var(--gold-soft);font-size:3.5rem;font-weight:300;line-height:1}
+    .step h3{margin:38px 0 15px;font-size:1.35rem;letter-spacing:-.03em}
+    .step p{margin:0;color:#bfc7d5;font-size:.9rem}
+    .gallery{padding:140px 0;background:var(--cream)}
+    .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:40px}
+    .gallery-hint{display:none;margin:0;color:var(--muted);font-size:.75rem;letter-spacing:.08em}
+    .shot-track{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:24px;width:min(100% - 48px,1160px);margin:62px auto 0;padding:12px 0 38px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--gold) transparent}
+    .shot{scroll-snap-align:start;margin:0}
+    .shot-frame{overflow:hidden;border:7px solid #e6dfcf;border-radius:29px;background:var(--navy);box-shadow:0 18px 45px rgba(30,40,56,.14)}
+    .shot-frame img{display:block;width:100%;aspect-ratio:540/1200;object-fit:cover}
+    .shot figcaption{display:flex;align-items:center;gap:10px;margin-top:18px;color:#4d5563;font-size:.8rem;font-weight:700}
+    .shot figcaption span{color:var(--gold);font-variant-numeric:tabular-nums}
+    .uses{padding:140px 0;background:var(--paper)}
+    .use-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:110px;align-items:start}
+    .use-list{margin:6px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .use-list li{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center;padding:25px 4px;border-bottom:1px solid var(--line);font-weight:800;letter-spacing:-.02em}
+    .use-list span{color:var(--gold);font-size:.72rem;letter-spacing:.12em}
+    .cta{position:relative;padding:128px 0;background:var(--navy);color:#fff;text-align:center;overflow:hidden}
+    .cta::before{content:"";position:absolute;left:50%;top:50%;width:700px;height:240px;border:1px solid rgba(200,162,74,.23);border-radius:50%;transform:translate(-50%,-50%) rotate(-6deg)}
+    .cta-inner{position:relative;z-index:2}
+    .cta-icon{display:block;width:74px;height:74px;margin:0 auto 26px;border-radius:19px}
+    .cta h2{margin:0;font-size:clamp(2.3rem,5vw,4.8rem);line-height:1.05;letter-spacing:-.055em}
+    .cta p{margin:18px 0 0;color:#c5ccd8}
+    .cta .store-row{justify-content:center}
+    footer{padding:42px 0;background:#0a101d;color:#99a3b4;font-size:.78rem}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:22px}
+    .footer-links a{text-underline-offset:4px}
+    a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @media(max-width:900px){
+      .hero{min-height:auto}.hero-grid{grid-template-columns:1fr;gap:0;min-height:auto;padding-top:110px}.hero-copy{padding:52px 0 16px}.hero h1{font-size:clamp(3.5rem,12vw,5.8rem)}.mockup-stage{width:min(610px,100%);height:620px;margin-inline:auto}.features-head{grid-template-columns:1fr;gap:22px}.feature-grid{grid-template-columns:1fr}.feature{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.feature:last-child{border-bottom:0}.feature h3{margin-top:46px}.step-list{grid-template-columns:1fr}.step{padding:34px 0}.step+.step{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.17)}.use-layout{grid-template-columns:1fr;gap:52px}.gallery-head{display:block}.gallery-hint{display:block;margin-top:16px}.shot-track{grid-template-columns:repeat(5,210px);width:auto;margin:44px 0 0;padding:12px 24px 38px;scroll-padding-inline:24px}
+    }
+    @media(max-width:600px){
+      .wrap{width:min(100% - 32px,1160px)}.header-inner{min-height:72px}.brand{gap:9px;font-size:.9rem}.brand img{width:32px;height:32px}.lang{font-size:.68rem}.hero-grid{padding-top:84px}.hero-copy{padding-top:44px}.hero h1{font-size:clamp(3.25rem,16vw,4.45rem)}.hero-desc{font-size:.93rem}.store-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}.store-btn{min-width:0;min-height:58px;padding:10px 12px}.store-btn small{font-size:.58rem}.store-btn strong{font-size:.88rem}.mockup-stage{height:475px;margin-top:8px}.phone{border-width:5px;border-radius:22px}.phone-main{width:45vw;max-width:180px;height:auto;aspect-ratio:540/1200;right:50%;top:45px;transform:translateX(50%);animation:none}.phone-left,.phone-right{width:31vw;max-width:124px;height:auto;aspect-ratio:540/1200;top:117px}.phone-left{left:0}.phone-right{right:0}.detect-mark{right:8%;top:206px;width:72px;height:48px}.hero-note{display:none}.features,.steps,.gallery,.uses{padding:92px 0}.features-head{margin-bottom:44px}.section-title{font-size:2.55rem}.feature{padding:34px 18px}.gallery-head{display:block}.gallery-hint{display:block;margin-top:16px}.shot-track{grid-template-columns:repeat(5,190px);gap:16px;width:auto;margin:38px 0 0;padding:12px 16px 38px;scroll-padding-inline:16px}.use-layout{gap:36px}.cta{padding:96px 0}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:16px 20px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="車のナンバー隠し ホーム"><img src="img/icon.png" width="256" height="256" alt="">車のナンバー隠し</a>
+      <nav class="lang" aria-label="言語切替"><a href="./" aria-current="page">日本語</a><span>/</span><a href="./en/" hreflang="en">English</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">NumberEraser · iOS / Android</p>
+          <h1>隠す。でも、<span class="gold">写真は<wbr>そのまま。</span></h1>
+          <p class="hero-desc">AIが車のナンバープレートを見つけ、選んだプレートを角度に合わせて合成。ぼかしやモザイクとは違う、車の写真になじむナンバー隠しです。</p>
+          <div class="store-row" aria-label="アプリを入手">
+            <a class="store-btn" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><span><small>iPhone / iPad</small><strong>App Store で入手</strong></span></a>
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><span><small>Android</small><strong>Google Play で入手</strong></span></a>
+          </div>
+        </div>
+        <div class="mockup-stage" aria-label="アプリ画面のプレビュー">
+          <div class="phone phone-left"><img src="img/02_corners_ja.webp" width="540" height="1200" alt="ナンバープレートの四隅を調整する画面"></div>
+          <div class="phone phone-main"><img src="img/01_replaced_ja.webp" width="540" height="1200" alt="車のナンバープレートを自動検出して合成した編集画面"></div>
+          <div class="phone phone-right"><img src="img/03_preset_switch_ja.webp" width="540" height="1200" alt="合成するプレートを切り替える画面"></div>
+          <div class="detect-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <span class="hero-note">ON-DEVICE PLATE COMPOSITING</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="features-head">
+          <div><p class="eyebrow">Three essentials</p><h2 class="section-title" id="features-title">写真の見た目と、<br>プライバシーの<wbr>ために。</h2></div>
+          <p class="section-lead">見つける、自然に覆う、端末内で仕上げる。車の写真を共有する前に必要な操作を、ひとつのアプリにまとめました。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><span class="feature-num">01 / DETECT</span><span class="feature-plate" aria-hidden="true"></span><h3>AIが四隅まで推定</h3><p>ナンバープレートを自動検出し、四隅を推定。斜めのプレートにも形を合わせ、写真を分割して調べることで奥の小さなナンバーも見つけやすくします。</p></article>
+          <article class="feature"><span class="feature-num">02 / COMPOSITE</span><span class="feature-plate" aria-hidden="true"></span><h3>ぼかさず、プレートで覆う</h3><p>無地・文字・画像のプレートを合成し、車の写真としての見た目を保ったまま隠します。色や枠線、文字を選んで自作することもできます。</p></article>
+          <article class="feature"><span class="feature-num">03 / PRIVATE</span><span class="feature-plate" aria-hidden="true"></span><h3>写真は端末の中で処理</h3><p>検出・編集・合成は端末内で行います。写真そのものをサーバーへ送信せず、元の写真を変更することもありません。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps" aria-labelledby="steps-title">
+      <div class="wrap">
+        <p class="eyebrow">Three steps</p><h2 class="section-title" id="steps-title">選んで、合わせて、<br>共有する。</h2>
+        <div class="step-list">
+          <article class="step"><strong>1</strong><h3>写真を選ぶ</h3><p>ナンバーを隠したい車の写真をフォトライブラリから選びます。</p></article>
+          <article class="step"><strong>2</strong><h3>自動で検出・合成</h3><p>プレートを自動検出して合成。四隅はドラッグで微調整でき、見つからない場合は手動で枠を追加できます。</p></article>
+          <article class="step"><strong>3</strong><h3>保存・共有</h3><p>加工した写真を新しく保存。メッセージアプリやSNSへそのまま共有できます。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="gallery-title">
+      <div class="wrap gallery-head"><div><p class="eyebrow">Inside the app</p><h2 class="section-title" id="gallery-title">細かく整えて、<br>すぐにシェア。</h2></div><p class="gallery-hint">横にスクロールして見る →</p></div>
+      <div class="shot-track" aria-label="アプリのスクリーンショット">
+        <figure class="shot"><div class="shot-frame"><img src="img/01_replaced_ja.webp" width="540" height="1200" loading="lazy" alt="自動検出してプレートを合成した編集画面"></div><figcaption><span>01</span>自動検出・合成</figcaption></figure>
+        <figure class="shot"><div class="shot-frame"><img src="img/02_corners_ja.webp" width="540" height="1200" loading="lazy" alt="検出したプレートの四隅を調整する画面"></div><figcaption><span>02</span>四隅を微調整</figcaption></figure>
+        <figure class="shot"><div class="shot-frame"><img src="img/03_preset_switch_ja.webp" width="540" height="1200" loading="lazy" alt="合成プレートを選択する画面"></div><figcaption><span>03</span>プレートを選択</figcaption></figure>
+        <figure class="shot"><div class="shot-frame"><img src="img/04_preset_edit_ja.webp" width="540" height="1200" loading="lazy" alt="色や文字を指定してプレートを作る画面"></div><figcaption><span>04</span>プレートを自作</figcaption></figure>
+        <figure class="shot"><div class="shot-frame"><img src="img/05_share_ja.webp" width="540" height="1200" loading="lazy" alt="加工した写真を保存・共有する画面"></div><figcaption><span>05</span>保存・共有</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="uses" aria-labelledby="uses-title">
+      <div class="wrap use-layout">
+        <div><p class="eyebrow">Made for sharing</p><h2 class="section-title" id="uses-title">車の写真を<br>公開する<wbr>前に。</h2><p class="section-lead">自分の車も、偶然写り込んだ車も。共有先に合わせてナンバーを整えられます。</p></div>
+        <ul class="use-list"><li><span>01</span>SNSへ愛車の写真を投稿する前に</li><li><span>02</span>フリマ・オークションの出品写真に</li><li><span>03</span>オフ会・イベントの写真共有に</li><li><span>04</span>ブログ・動画のサムネイルに</li></ul>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap cta-inner"><img class="cta-icon" src="img/icon.png" width="256" height="256" loading="lazy" alt="車のナンバー隠し アプリアイコン"><p class="eyebrow">NumberEraser</p><h2 id="cta-title">写真を選んで、<br>ナンバーを整える。</h2><p>無料で使えます。iOS / Android に対応。</p><div class="store-row" aria-label="アプリを入手"><a class="store-btn" href="https://apps.apple.com/app/id6808107027" target="_blank" rel="noopener"><span><small>iPhone / iPad</small><strong>App Store で入手</strong></span></a><a class="store-btn" href="https://play.google.com/store/apps/details?id=com.x91932.numbereraser" target="_blank" rel="noopener"><span><small>Android</small><strong>Google Play で入手</strong></span></a></div></div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><nav class="footer-links" aria-label="フッターナビゲーション"><a href="./support/">サポート</a><a href="./terms/">利用規約</a><a href="/privacy/">プライバシーポリシー</a></nav><span>© 株式会社クイックサーブ</span></div></footer>
+</body>
+</html>
