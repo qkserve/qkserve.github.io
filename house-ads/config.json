@@ -88,6 +88,46 @@
         "zh_Hant": "自動記錄步數、路線與停留"
       },
       "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.fontdungeon",
+      "enabled": true,
+      "weight": 1,
+      "android": { "packageId": "com.x91932.fontdungeon" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.fontdungeon.png",
+      "title": {
+        "ja": "漢字ダンジョン",
+        "en": "Kanji Dungeon",
+        "zh": "汉字地下城",
+        "zh_Hant": "漢字地下城"
+      },
+      "tagline": {
+        "ja": "3D迷路を歩いて漢字を当てる脳トレ",
+        "en": "Walk a 3D maze, guess the kanji",
+        "zh": "走3D迷宫，猜出汉字",
+        "zh_Hant": "走 3D 迷宮，猜出漢字"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.moupai",
+      "enabled": true,
+      "weight": 1,
+      "android": { "packageId": "com.x91932.moupai" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.moupai.png",
+      "title": {
+        "ja": "盲牌",
+        "en": "Blind Draw",
+        "zh": "盲摸麻将",
+        "zh_Hant": "盲摸麻將"
+      },
+      "tagline": {
+        "ja": "振動だけで麻雀牌を当てるタイムアタック",
+        "en": "Guess mahjong tiles by vibration",
+        "zh": "只凭振动猜出麻将牌",
+        "zh_Hant": "只憑振動猜出麻將牌"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
     }
   ]
 }
