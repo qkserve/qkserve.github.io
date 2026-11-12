@@ -72,7 +72,7 @@
       "id": "com.x91932.pedometer",
       "enabled": true,
       "weight": 1,
-      "_iosPending": { "appStoreId": "6795458978" },
+      "ios": { "appStoreId": "6795458978" },
       "android": { "packageId": "com.x91932.pedometer" },
       "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.pedometer.png",
       "title": {
@@ -86,6 +86,67 @@
         "en": "Auto-log steps, routes & stays",
         "zh": "自动记录步数、路线和停留",
         "zh_Hant": "自動記錄步數、路線與停留"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.fontdungeon",
+      "enabled": true,
+      "weight": 1,
+      "android": { "packageId": "com.x91932.fontdungeon" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.fontdungeon.png",
+      "title": {
+        "ja": "漢字ダンジョン",
+        "en": "Kanji Dungeon",
+        "zh": "汉字地下城",
+        "zh_Hant": "漢字地下城"
+      },
+      "tagline": {
+        "ja": "3D迷路を歩いて漢字を当てる脳トレ",
+        "en": "Walk a 3D maze, guess the kanji",
+        "zh": "走3D迷宫，猜出汉字",
+        "zh_Hant": "走 3D 迷宮，猜出漢字"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "com.x91932.moupai",
+      "enabled": true,
+      "weight": 1,
+      "android": { "packageId": "com.x91932.moupai" },
+      "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.moupai.png",
+      "title": {
+        "ja": "盲牌",
+        "en": "Blind Draw",
+        "zh": "盲摸麻将",
+        "zh_Hant": "盲摸麻將"
+      },
+      "tagline": {
+        "ja": "振動だけで麻雀牌を当てるタイムアタック",
+        "en": "Guess mahjong tiles by vibration",
+        "zh": "只凭振动猜出麻将牌",
+        "zh_Hant": "只憑振動猜出麻將牌"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "jp.co.quickserve.mokunoku",
+      "enabled": true,
+      "weight": 1,
+      "ios": { "appStoreId": "6825223329" },
+      "android": { "packageId": "jp.co.quickserve.mokunoku" },
+      "icon": "https://qkserve.github.io/house-ads/icons/jp.co.quickserve.mokunoku.png",
+      "title": {
+        "ja": "もくのく",
+        "en": "mokunoku",
+        "zh": "mokunoku",
+        "zh_Hant": "mokunoku"
+      },
+      "tagline": {
+        "ja": "妖精と育てる、生活リズムの習慣",
+        "en": "Build your daily rhythm with moku",
+        "zh": "和小精灵一起培养作息习惯",
+        "zh_Hant": "和小精靈一起培養作息習慣"
       },
       "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
     }
