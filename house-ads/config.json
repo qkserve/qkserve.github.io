@@ -128,6 +128,27 @@
         "zh_Hant": "只憑振動猜出麻將牌"
       },
       "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
+    },
+    {
+      "id": "jp.co.quickserve.mokunoku",
+      "enabled": true,
+      "weight": 1,
+      "ios": { "appStoreId": "6825223329" },
+      "android": { "packageId": "jp.co.quickserve.mokunoku" },
+      "icon": "https://qkserve.github.io/house-ads/icons/jp.co.quickserve.mokunoku.png",
+      "title": {
+        "ja": "もくのく",
+        "en": "mokunoku",
+        "zh": "mokunoku",
+        "zh_Hant": "mokunoku"
+      },
+      "tagline": {
+        "ja": "妖精と育てる、生活リズムの習慣",
+        "en": "Build your daily rhythm with moku",
+        "zh": "和小精灵一起培养作息习惯",
+        "zh_Hant": "和小精靈一起培養作息習慣"
+      },
+      "cta": { "ja": "入手", "en": "Get", "zh": "获取", "zh_Hant": "取得" }
     }
   ]
 }
