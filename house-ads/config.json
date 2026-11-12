@@ -72,7 +72,7 @@
       "id": "com.x91932.pedometer",
       "enabled": true,
       "weight": 1,
-      "_iosPending": { "appStoreId": "6795458978" },
+      "ios": { "appStoreId": "6795458978" },
       "android": { "packageId": "com.x91932.pedometer" },
       "icon": "https://qkserve.github.io/house-ads/icons/com.x91932.pedometer.png",
       "title": {
