@@ -88,7 +88,9 @@
     .gallery{padding:140px 0;background:var(--cream)}
     .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:40px}
     .gallery-hint{display:none;margin:0;color:var(--muted);font-size:.75rem;letter-spacing:.08em}
-    .shot-track{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:24px;width:min(100% - 48px,1160px);margin:62px auto 0;padding:12px 0 38px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--gold) transparent}
+    .shot-track{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:24px;width:min(100% - 48px,1160px);margin:62px auto 0;padding:12px 0 38px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--gold) transparent}
+    /* 横スクロールする幅ではキーボードでも送れるようにフォーカスを受ける */
+    .shot-track:focus-visible{outline:3px solid var(--gold-ink);outline-offset:4px}
     .shot{scroll-snap-align:start;margin:0}
     .shot-frame{overflow:hidden;border:7px solid #e6dfcf;border-radius:29px;background:var(--navy);box-shadow:0 18px 45px rgba(30,40,56,.14)}
     .shot-frame img{display:block;width:100%;aspect-ratio:540/1200;object-fit:cover}
@@ -178,7 +180,7 @@
 
     <section class="gallery" aria-labelledby="gallery-title">
       <div class="wrap gallery-head"><div><p class="eyebrow">Inside the app</p><h2 class="section-title" id="gallery-title">細かく整えて、<br>すぐにシェア。</h2></div><p class="gallery-hint">横にスクロールして見る →</p></div>
-      <div class="shot-track" aria-label="アプリのスクリーンショット">
+      <div class="shot-track" role="region" tabindex="0" aria-label="アプリのスクリーンショット">
         <figure class="shot"><div class="shot-frame"><img src="img/01_replaced_ja.webp" width="540" height="1200" loading="lazy" alt="自動検出してプレートを合成した編集画面"></div><figcaption><span>01</span>自動検出・合成</figcaption></figure>
         <figure class="shot"><div class="shot-frame"><img src="img/02_corners_ja.webp" width="540" height="1200" loading="lazy" alt="検出したプレートの四隅を調整する画面"></div><figcaption><span>02</span>四隅を微調整</figcaption></figure>
         <figure class="shot"><div class="shot-frame"><img src="img/03_preset_switch_ja.webp" width="540" height="1200" loading="lazy" alt="合成プレートを選択する画面"></div><figcaption><span>03</span>プレートを選択</figcaption></figure>

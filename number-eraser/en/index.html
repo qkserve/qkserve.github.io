@@ -88,7 +88,9 @@
     .gallery{padding:140px 0;background:var(--cream)}
     .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:40px}
     .gallery-hint{display:none;margin:0;color:var(--muted);font-size:.75rem;letter-spacing:.08em}
-    .shot-track{display:grid;grid-template-columns:repeat(5,minmax(170px,1fr));gap:24px;width:min(100% - 48px,1160px);margin:62px auto 0;padding:12px 0 38px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--gold) transparent}
+    .shot-track{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:24px;width:min(100% - 48px,1160px);margin:62px auto 0;padding:12px 0 38px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--gold) transparent}
+    /* 横スクロールする幅ではキーボードでも送れるようにフォーカスを受ける */
+    .shot-track:focus-visible{outline:3px solid var(--gold-ink);outline-offset:4px}
     .shot{scroll-snap-align:start;margin:0}
     .shot-frame{overflow:hidden;border:7px solid #e6dfcf;border-radius:29px;background:var(--navy);box-shadow:0 18px 45px rgba(30,40,56,.14)}
     .shot-frame img{display:block;width:100%;aspect-ratio:540/1200;object-fit:cover}
@@ -178,7 +180,7 @@
 
     <section class="gallery" aria-labelledby="gallery-title">
       <div class="wrap gallery-head"><div><p class="eyebrow">Inside the app</p><h2 class="section-title" id="gallery-title">Fine-tune it.<br>Then share.</h2></div><p class="gallery-hint">Scroll to explore →</p></div>
-      <div class="shot-track" aria-label="App screenshots">
+      <div class="shot-track" role="region" tabindex="0" aria-label="App screenshots">
         <figure class="shot"><div class="shot-frame"><img src="../img/01_replaced_en.webp" width="540" height="1200" loading="lazy" alt="Editor with an automatically detected replacement plate"></div><figcaption><span>01</span>Detect &amp; composite</figcaption></figure>
         <figure class="shot"><div class="shot-frame"><img src="../img/02_corners_en.webp" width="540" height="1200" loading="lazy" alt="Adjusting the four corners of a detected plate"></div><figcaption><span>02</span>Fine-tune corners</figcaption></figure>
         <figure class="shot"><div class="shot-frame"><img src="../img/03_preset_switch_en.webp" width="540" height="1200" loading="lazy" alt="Selecting a replacement plate"></div><figcaption><span>03</span>Choose a plate</figcaption></figure>
