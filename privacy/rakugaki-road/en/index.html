@@ -34,7 +34,7 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <p class="lang"><a href="../" rel="alternate" hreflang="ja">日本語</a></p>
 
 <h1>Doodle Road Privacy Policy</h1>
-<p class="meta">Applies to: Doodle Road (らくがきロード) — <code>com.x91932.rakugakiroad</code> (iOS / Android)<br>Effective: November 17, 2026<br>Last updated: November 17, 2026</p>
+<p class="meta">Applies to: Doodle Road (らくがきロード) — <code>com.x91932.rakugakiroad</code> (iOS / Android)<br>Effective: November 17, 2026<br>Last updated: November 20, 2026</p>
 
 <p>QuickServe Corporation ("we", "us") sets out below how user information is handled in Doodle Road (the "App"), our smartphone game (this "Policy").</p>
 
@@ -56,7 +56,6 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 <table>
 <tr><th>Data</th><th>Purpose</th></tr>
 <tr><td>Your rating for each stage (number of ★)</td><td>Displaying your records and unlocking the next stages</td></tr>
-<tr><td>Mid-stage save (the stage layout and the amount of ink used when you cleared the front side; on some stages, the lines you drew on the front side)</td><td>Resuming the game</td></tr>
 <tr><td>Hints you have opened and explanations you have already seen</td><td>Letting you review hints and explanations</td></tr>
 <tr><td>Settings such as sound on/off and display language</td><td>Keeping your settings</td></tr>
 <tr><td>A record of our requests for you to review the App on the store</td><td>Avoiding asking too often</td></tr>
@@ -64,15 +63,15 @@ footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--muted);font
 </div>
 <p>Uninstalling the App removes this data from your device. However, copies stored by OS backup features (such as iCloud Backup or Google Backup) may persist in accordance with the settings and retention periods of the OS provider and may be restored when you reinstall.</p>
 <p>You can delete the data on your device yourself at any time by uninstalling the App or by clearing the App's data in the OS settings (on Android, for example, "Clear data" under Settings &gt; Apps &gt; Doodle Road &gt; Storage). We have no access to the data on your device and therefore cannot delete it for you.</p>
-<p>The lines you draw in the App may be stored on your device as part of a mid-stage save on some stages, but they are never sent to us or to third parties (except for OS backups). The App has no text-entry features, and nothing you type is ever sent as an event.</p>
+<p>The lines you draw in the App are used only while you play and to let you retry; they are never stored on your device or sent to us or to third parties. The App has no text-entry features, and nothing you type is ever sent as an event.</p>
 
 <h2>4. Information collected by third-party SDKs</h2>
 <p>The App uses the third-party SDKs below for showing ads, analysing usage and improving quality. These SDKs automatically collect the following information and send it to the servers of Google LLC and its affiliates ("Google").</p>
 <div class="tablewrap">
 <table>
 <tr><th>SDK</th><th>Main information collected</th><th>Purpose</th></tr>
-<tr><td>Google AdMob<br>(ads; rewarded ads shown when you open a hint)</td><td>Advertising ID (iOS: IDFA / Android: advertising ID; collected only where permitted by OS settings, law and your consent), ad impression and interaction events, IP address (including estimation of approximate location), device information (model, OS version, etc.)</td><td>Ad delivery, measurement, fraud prevention</td></tr>
-<tr><td>Firebase Analytics<br>(usage analytics)</td><td>Identifiers such as the app instance ID; screen views; game progress events such as stage start (stage, front/back side), front side cleared (stage, ink used), stage cleared (stage, number of ★, ink used, whether it is the first clear), miss (stage, side, reason, number of misses in a row) and hint opened (stage, side, hint level, whether an ad was watched); events that Firebase records automatically (such as first_open for the first launch, session_start for the start of a session, user_engagement for time in use, and app updates); device and OS information; approximate region based on IP address</td><td>Improving the App through usage analysis<br>* Not collected in regions where consent is required (Section 7)</td></tr>
+<tr><td>Google AdMob<br>(ads; rewarded ads shown when you open a hint)</td><td>Advertising ID (iOS: IDFA / Android: advertising ID; collected only where permitted by OS settings, law and your consent), ad impression and interaction events, IP address (including estimation of approximate location), device information (model, OS version, etc.), diagnostic and performance information (such as launch time and crash logs)</td><td>Ad delivery, measurement, fraud prevention, improving the SDK</td></tr>
+<tr><td>Firebase Analytics<br>(usage analytics)</td><td>Identifiers such as the app instance ID; screen views; game progress events such as stage start (stage, front/back side), stage cleared (stage, number of ★, ink used, whether it is the first clear), miss (stage, side, reason, number of misses in a row) and hint opened (stage, side, hint level, whether an ad was watched); events that Firebase records automatically (such as first_open for the first launch, session_start for the start of a session, user_engagement for time in use, and app updates); device and OS information; approximate region based on IP address</td><td>Improving the App through usage analysis<br>* Not collected in regions where consent is required (Section 7)</td></tr>
 <tr><td>Firebase Crashlytics<br>(crash reporting)</td><td>Crash logs, records of app errors (where in the program they occurred), diagnostic and performance information, installation UUID, device and OS information</td><td>Analysing defects, improving quality</td></tr>
 </table>
 </div>
@@ -143,6 +142,7 @@ Address: Sakurai Bldg. 2F, 2-8-19 Fukagawa, Koto-ku, Tokyo 135-0033, Japan</p>
 <h2>13. Revision history</h2>
 <ul>
 <li><strong>November 17, 2026:</strong> Established.</li>
+<li><strong>November 20, 2026:</strong> Updated to match the current App: removed "mid-stage save" from the information stored on your device and "front side cleared" from the Firebase Analytics events, and added diagnostic and performance information to the information collected by Google AdMob.</li>
 </ul>
 </main>
 <footer>
